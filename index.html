@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Recipe Website</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Box Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><img src="images/logo.png"></a>
+
+
+        <form action="" class="search-bar" onsubmit='return false;'>
+            <input type="text" placeholder="search recipe..." name="q">
+            <button type="submit"><img src="images/search.png" alt=""></button>
+        </form>
+
+        <ul class="navbar">
+            <li><a href="#home" class="home-active">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#blog" >Blog</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </header>
+
+    <!-- Home Section -->
+    <section class="swiper home" >
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <div class="home-text">
+                    <span>
+                        Tasty and Rich
+                    </span>
+                    <h1>Made with love, <br>the best healthy <br>Marry me chicken</h1>
+                    <a href="#" class="btn">Get Recipe</a>
+                </div>
+                <img src="images/currychicken.jpg">
+
+            </div>
+            <!-- slide 2 -->
+            <div class="swiper-slide container">
+                <div class="home-text">
+                    <span>
+                        Tasty and Rich
+                    </span>
+                    <h1>Easy stir fry <br>Black pepper beef</h1>
+                    <a href="#" class="btn">Get Recipe</a>
+                </div>
+                <img src="images/black pepper beef.jpg">
+
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide container">
+                <div class="home-text">
+                    <span>
+                        Tasty and Rich
+                    </span>
+                    <h1>Quick Meal<br>Korean Ramyum noodles</h1>
+                    <a href="#" class="btn">Get Recipe</a>
+                </div>
+                <img src="images/korean.jpg" alt="">
+                
+            </div>
+            <!-- Slide 4 -->
+            <div class="swiper-slide container">
+                <div class="home-text">
+                    <span>
+                        Tasty and Rich
+                    </span>
+                    <h1>Spices and Herbs.<br>Finest aromatic and flavorful Spices</h1>
+                    <a href="#" class="btn">Get Recipe</a>
+                </div>
+                <img src="images/spices.jpg" alt="">
+                
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>>    
+    </section>
+
+
+     <!-- Categories Section -->
+     <section class="categories" id="categories">
+        <h2>Recipe Categories</h2>
+        <div class="categories-grid" id="categoriesGrid"></div>
+    </section>
+
+    <!-- Recipes Container -->
+    <section class="recipes" id="recipes">
+        <h2>All Recipes</h2>
+        <div class="recipes-container" id="recipesContainer"></div>
+        <button onclick="fetchRandomRecipe()" class="random-recipe-btn">
+            Get Random Recipe
+        </button>
+    </section>
+
+    <!-- Add Recipe Form -->
+    <section class="add-recipe" id="add-recipe">
+        <h2>Share Your Recipe</h2>
+        <form id="recipeForm">
+            <input type="text" id="recipeTitle" placeholder="Recipe Title" required>
+            <input type="text" id="recipeCategory" placeholder="Category" required>
+            <textarea id="recipeIngredients" placeholder="Ingredients" required></textarea>
+            <textarea id="recipeInstructions" placeholder="Instructions (step by step)" required></textarea>
+            <input type="url" id="recipeImage" placeholder="Image URL (optional)">
+            <button type="submit" class="btn">Submit Recipe</button>
+        </form>
+    </section>
+
+    <!-- Recipe Modal -->
+    <div class="recipe-modal" id="recipeModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="recipeContent"></div>
+        </div>
+    </div>
+     <!-- Swiper JS -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Main Js Script -->
+    <script src="script.js"></script>
+</body>
+</html>
